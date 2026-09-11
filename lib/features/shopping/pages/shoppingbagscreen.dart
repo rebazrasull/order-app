@@ -66,14 +66,9 @@ class _ShoppingbagscreenState extends State<Shoppingbagscreen> {
                 padding: EdgeInsets.symmetric(
                   vertical: 14.0
                 ),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 14.0),
-                  color: Colors.blue,
-                  child:  SizedBox(
-                    height: deviceHeight*0.6, 
-                    child: Shopping(),
-                  ),
+                child: SizedBox(
+                  height: deviceHeight*0.6, 
+                  child: Shopping(),
                 ),
               ),
             ],
