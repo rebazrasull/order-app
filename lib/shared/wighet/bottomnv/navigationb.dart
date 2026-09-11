@@ -35,9 +35,8 @@ class _NavigationbState extends State<Navigationb> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.red,
-  
+
         backgroundColor: Colors.white,
-        fixedColor: const Color.fromARGB(255, 11, 11, 11),
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         items: const [
