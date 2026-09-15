@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app_name/config/cstuomerimage/assets.dart';
+import 'package:my_app_name/config/cstuomerimage/img_helper.dart';
 
 class Productcard extends StatefulWidget {
   const Productcard({super.key});
@@ -26,6 +28,7 @@ class _ProductcardState extends State<Productcard> {
                   borderRadius: BorderRadius.circular(12.0),
                   color: Colors.grey.shade100
                 ),
+              child:  getSvgImage(asset: Assets.nacks)
               ),
               SizedBox(
                 height: 8.0,

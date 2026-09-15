@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:lottie/lottie.dart';
-import 'package:my_app_name/features/Sing%20in/sing_in.dart'; // Fixed: Import Lottie package
+import 'package:my_app_name/features/Sing%20in/pages/sing_in.dart'; // Fixed: Import Lottie package
 
 
 class AnimatedSplashScreen extends StatefulWidget {

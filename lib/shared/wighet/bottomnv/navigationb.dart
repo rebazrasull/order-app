@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app_name/config/cstuomerimage/assets.dart';
+import 'package:my_app_name/config/cstuomerimage/img_helper.dart';
 import 'package:my_app_name/features/exploer/screens/explore_screen.dart';
 import 'package:my_app_name/features/home/pages/home_screens.dart';
 import 'package:my_app_name/features/notifications/pages/notificationsscreen.dart';
@@ -34,16 +36,21 @@ class _NavigationbState extends State<Navigationb> {
       body: IndexedStack(index: _selectedIndex, children: _pages),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.red,
-
+        selectedItemColor: Colors.orangeAccent,   
         backgroundColor: Colors.white,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        items: const [
+        items:  [
           // Added const for performance
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+             label: 'Home',
+             ),
           BottomNavigationBarItem(
             icon: Icon(Icons.explore_outlined),
+            // icon:getSvgImage(asset: Assets.home,
+            // size: 24.0
+            // ),
             label: 'Explore',
           ),
           BottomNavigationBarItem(

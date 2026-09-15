@@ -33,10 +33,11 @@ class _NotificationsscreenState extends State<Notificationsscreen> {
             bottom: TabBar(
               labelColor: Colors.black,
               unselectedLabelColor: Colors.grey[600],
-              indicatorColor: Colors.black,
+              indicatorColor: Colors.black,         
               indicatorWeight: 3,
-              labelStyle:
-               TextStyle(
+             // overlayColor: WidgetStateColor.transparent,
+             overlayColor: WidgetStateProperty.all(Colors.transparent),
+              labelStyle:TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 14.0,
                ),

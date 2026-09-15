@@ -12,7 +12,7 @@ class _ShoppingbagscreenState extends State<Shoppingbagscreen> {
   @override
   Widget build(BuildContext context) {
     final double deviceHeight = MediaQuery.of(context).size.height;
-    final double deviceWidth = MediaQuery.of(context).size.width;
+   // final double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -64,7 +64,7 @@ class _ShoppingbagscreenState extends State<Shoppingbagscreen> {
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                  vertical: 14.0
+                  vertical: 21.0
                 ),
                 child: SizedBox(
                   height: deviceHeight*0.6, 

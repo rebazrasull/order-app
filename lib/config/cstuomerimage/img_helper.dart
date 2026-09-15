@@ -28,7 +28,9 @@ class CustomIcons_images {
   static  String MaleImage ='assets/images/354207491_3e37c600-4ca7-474b-94bb-ad2f87f0abc9.svg';
   static  String FmaleImage ='assets/images/366235897_9e8d7b81-3864-4e3d-a241-0e37fab4bf14.svg';
   static  String WebDesign ='assets/images/web design course.svg';
-  static String Hospital ='images/10780629_19198564.svg';
+  static String Hospital ='10780629_19198564.svg';
+  static String barger ='assets/images/barger.svg';
+
 
 }
 
@@ -38,6 +40,7 @@ Widget  getSvgIcon({
    double? size,
   
 }){
+   // ignore: prefer_typing_uninitialized_variables
    var colorFilte;
    return SvgPicture.asset(
     asset,
@@ -46,8 +49,8 @@ Widget  getSvgIcon({
     colorFilter: color!=null?colorFilte.mode(color,BlendMode.srcIn):null
     );
 }
-class CustomIcons_image {
-  static  String topicImage ='images/undraw_blogging_38kl.svg';
+class CustomIcons {
+  static  String nacks ='assets/cons//nacks.svg';
   static  String studyImage ='images/17543960_2002.i515.001_modern_students_flat_icons-13.svg';
   static  String MaleImage ='images/354207491_3e37c600-4ca7-474b-94bb-ad2f87f0abc9.svg';
   static  String FmaleImage ='images/366235897_9e8d7b81-3864-4e3d-a241-0e37fab4bf14.svg';
