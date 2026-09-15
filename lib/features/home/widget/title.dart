@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 import 'package:my_app_name/config/cstuomerimage/assets.dart';
 import 'package:my_app_name/config/cstuomerimage/img_helper.dart';
 
@@ -27,13 +27,12 @@ class _TitleSState extends State<TitleS> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CircleAvatar(
-                radius: 28.0,
-                child: getSvgImage(asset: Assets.nacks, size: 24),
+                radius: 28.0.r,
+                child: getSvgImage(asset: Assets.nacks, size: 20.r),
                 // child: SvgPicture.asset(
                 //     CustomIcons.nacks,
                 //    ),
               ),
-              SizedBox(height: 6),
               Text('Title'),
             ],
           ),

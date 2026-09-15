@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_app_name/config/cstuomerimage/img_helper.dart';
-import 'package:my_app_name/features/home/widget/fitlerchip.dart';
+import 'package:my_app_name/features/home/widget/fitler_chip.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:my_app_name/features/home/widget/productcard.dart';
+import 'package:my_app_name/features/home/widget/product_card.dart';
 import 'package:my_app_name/features/home/widget/title.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
