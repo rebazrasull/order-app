@@ -28,7 +28,7 @@ class _ProductcardState extends State<Productcard> {
                   borderRadius: BorderRadius.circular(12.0),
                   color: Colors.grey.shade100
                 ),
-              child:  getSvgImage(asset: Assets.nacks)
+              child:  getSvgImage(asset: Assets.french)
               ),
               SizedBox(
                 height: 8.0,

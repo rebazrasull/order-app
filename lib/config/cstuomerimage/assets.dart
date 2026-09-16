@@ -1,4 +1,6 @@
 class Assets {
-  static const String home = 'assets/icons/home_fill.svg';
-   static  String nacks ='assets/icons/Snacks.svg';
+  static String nacks = 'assets/icons/Snacks.svg';
+  static String french = 'assets/icons/Frame.svg';
+  static String barger = 'assets/icons/barger.svg';
+  static String food = 'assets/assets/icons/foood.svg';
 }
