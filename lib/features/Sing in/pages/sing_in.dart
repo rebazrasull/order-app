@@ -24,97 +24,120 @@ class _SingInState extends State<SingIn> {
           children: [
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 125),
-              decoration: BoxDecoration(),
-              child: getSvgImage(asset: Assets.nacks, size: 42),
-            ),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 13.0),
-              decoration: BoxDecoration(color: Colors.amber),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    'Create an account',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
+              padding: EdgeInsets.symmetric(
+                vertical:55.0,
+                ),
+           child: CircleAvatar(
+              radius: 132,
+             child: Image.network(
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWMw0iTImiyPWZVkqhLPNxAgI0MlMMNdvNRDPN6fJzg&s=10',
+              fit: BoxFit.cover,
+              loadingBuilder: (context, child, loadingProgress) {
+                if(loadingProgress == null) return child;
+                return Center(
+                  child: CircularProgressIndicator(
+                    value: loadingProgress.expectedTotalBytes != null
+                    ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
+                    :null
+                    ,
+                  ),
+                );
+              },
+              errorBuilder: (context, error, stackTrace) {
+                return Container(
+                  color: Colors.grey[200],
+                  child: Icon(
+                    Icons.broken_image,
+                    color: Colors.grey,
+                    size: 40,
                     ),
-                  ),
-                  Text(
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    'Enter your email to sign up for this app',
-                    style: TextStyle(color: Colors.black, fontSize: 14.0),
-                  ),
-                ],
+                );
+              },
+              
               ),
+           ),
             ),
-            Container(
-              width: double.infinity,
-              decoration: BoxDecoration(color: Colors.deepOrange),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'email@domain.com',
-                        labelText: 'email@domain.com',
-                        filled: true,
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12.0),
-                          borderSide: BorderSide.none,
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12.0),
-                          borderSide: BorderSide.none,
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12.0),
-                          borderSide: BorderSide(color: Colors.red),
-                        ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  'Create an account',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  'Enter your email to sign up for this app',
+                  style: TextStyle(color: Colors.black, fontSize: 14.0),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 4,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'email@domain.com',
+                      labelText: 'email@domain.com',
+                      filled: true,
+                      fillColor: Colors.grey.shade200,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                        borderSide: BorderSide(color: Colors.red),
                       ),
                     ),
                   ),
-
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.0,
-                      vertical: 12.0,
+                ),
+            
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 8.0,
+                    vertical: 12.0,
+                  ),
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      minimumSize: Size(double.infinity, 45.0),
+                      backgroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusGeometry.circular(8.0),
+                        side: BorderSide(color: Colors.white, width: 1.5),
+                      ),
                     ),
-                    child: OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        minimumSize: Size(double.infinity, 45.0),
-                        backgroundColor: Colors.black,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadiusGeometry.circular(8.0),
-                          side: BorderSide(color: Colors.white, width: 1.5),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => Navigationb(),
                         ),
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => Navigationb(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        'continue',
-                        style: TextStyle(color: Colors.white, fontSize: 18.0),
-                      ),
+                      );
+                    },
+                    child: Text(
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      'continue',
+                      style: TextStyle(color: Colors.white, fontSize: 18.0),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             SizedBox(height: 12.0),
             Row(
@@ -137,89 +160,84 @@ class _SingInState extends State<SingIn> {
               ],
             ),
 
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 12.0),
-              decoration: BoxDecoration(color: Colors.green),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.0,
-                      vertical: 12.0,
-                    ),
-                    child: OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        minimumSize: Size(double.infinity, 45.0),
-                        backgroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadiusGeometry.circular(8.0),
-                          side: BorderSide(color: Colors.white, width: 1.5),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          FaIcon(
-                            FontAwesomeIcons.google,
-                            size: 28.0,
-                            color: Colors.red,
-                          ),
-                          SizedBox(width: 12.0),
-                          Text(
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            'Coutinue With Google',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 8.0,
+                    vertical: 12.0,
                   ),
-
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.0),
-                    child: OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        minimumSize: Size(double.infinity, 45.0),
-                        backgroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadiusGeometry.circular(8.0),
-                          side: BorderSide(color: Colors.white, width: 1.5),
-                        ),
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      minimumSize: Size(double.infinity, 45.0),
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusGeometry.circular(8.0),
+                        side: BorderSide(color: Colors.white, width: 1.5),
                       ),
-                      onPressed: () {},
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          FaIcon(
-                            FontAwesomeIcons.apple,
-                            size: 28.0,
+                    ),
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.google,
+                          size: 28.0,
+                          color: Colors.red,
+                        ),
+                        SizedBox(width: 12.0),
+                        Text(
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          'Coutinue With Google',
+                          style: TextStyle(
                             color: Colors.black,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
                           ),
-                          SizedBox(width: 12.0),
-                          Text(
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            'Coutinue With Apple',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
+                ),
+            
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      minimumSize: Size(double.infinity, 45.0),
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusGeometry.circular(8.0),
+                        side: BorderSide(color: Colors.white, width: 1.5),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.apple,
+                          size: 28.0,
+                          color: Colors.black,
+                        ),
+                        SizedBox(width: 12.0),
+                        Text(
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          'Coutinue With Apple',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
