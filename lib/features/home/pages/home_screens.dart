@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app_name/config/cstuomerimage/img_helper.dart';
 import 'package:my_app_name/features/home/widget/fitler_chip.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:my_app_name/features/home/widget/product_card.dart';
@@ -14,10 +13,11 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
-  final List<String> bannerTitles = [
-    'Banner title 1',
-    'Banner title 1',
-    'Banner title 1',
+  final List<String> imgList = [
+    'https://png.pngtree.com/thumb_back/fh260/background/20250417/pngtree-cheesy-pizza-slice-being-lifted-from-freshly-baked-pie-showcasing-gooey-image_17203271.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScLBV33nDQFB1Ngnn3237LwLtbqocCqTjY0lX480u1-A&s=10',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaX0Q1OmRTa4svyBoQlVCKzv7aouzzg3Ws0IClT7d_4Q&s=10',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQhUgtZOR8hU2oVlpEPVO3dk9GxG_N7GQRu60Jz9rMw&s=10'
   ];
   int activeIndex = 0;
   @override
@@ -116,30 +116,46 @@ class _HomescreenState extends State<Homescreen> {
                       alignment: Alignment.bottomCenter,
                       children: [
                         CarouselSlider.builder(
-                          itemCount: bannerTitles.length,
+                          itemCount: imgList.length,
                           itemBuilder: (context, index, realInedx) {
                             return Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Container(
-                                padding: EdgeInsets.all(16.0),
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(24.0),
                                   color: Colors.grey.shade100,
                                 ),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Expanded(
-                                      child: Text(
-                                        bannerTitles[index],
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 22.0,
-                                          fontWeight: FontWeight.bold,
+                                      child: ClipRRect(
+                                         borderRadius: BorderRadius.circular(24.0),
+                                        child: Image.network( 
+                                         imgList[index],
+                                          fit: BoxFit.cover,
+                                          loadingBuilder: (context, child, loadingProgress) {
+                                            if(loadingProgress ==null) return child;
+                                             return Center(
+                                           child: CircularProgressIndicator(
+                                           value: loadingProgress.expectedTotalBytes != null
+                                           ? loadingProgress.cumulativeBytesLoaded / 
+                                            loadingProgress.expectedTotalBytes!
+                                            : null,
+                                           ),
+                                          );
+                                          },
+                                          errorBuilder: (context, error, stackTrace) {
+                                            return Center(
+                                              child: Icon(
+                                                Icons.broken_image,
+                                                size: 40.0,
+                                                color: Colors.grey,
+                                                ),
+                                            );
+                                          },
                                         ),
-                                      ),
+                                      )
                                     ),
                                   ],
                                 ),
@@ -159,7 +175,7 @@ class _HomescreenState extends State<Homescreen> {
                           bottom: 12.0,
                           child: AnimatedSmoothIndicator(
                             activeIndex: activeIndex,
-                            count: bannerTitles.length,
+                            count: imgList.length,
                             effect: ColorTransitionEffect(
                               dotWidth: 8.0,
                               dotHeight: 8.0,
@@ -188,7 +204,7 @@ class _HomescreenState extends State<Homescreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        'Title',
+                        'Vegetables',
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -206,7 +222,7 @@ class _HomescreenState extends State<Homescreen> {
               ),
               Container(
                 width: double.infinity,
-                height: deviceHeight * 0.112,
+                height: deviceHeight * 0.116,
                 color: Colors.amber,
                 padding: EdgeInsets.symmetric(vertical: 6.0),
                 child: TitleS(),

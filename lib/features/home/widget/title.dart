@@ -46,14 +46,45 @@ class _TitleSState extends State<TitleS> {
         ),
 
          ImageItemModel(
-          imageUrl: 'icons/cherry.png',
-           title: 'Cherry'
+          imageUrl: 'icons/apricot.png',
+           title: 'Apicot'
      
         ),
 
           ImageItemModel(
           imageUrl: 'icons/banana.png',
            title: 'Banana'
+     
+        ),
+
+          ImageItemModel(
+          imageUrl: 'icons/watermelon.png',
+           title: 'Watermelon'
+     
+        ),
+         ImageItemModel(
+          imageUrl: 'icons/pineapple.png',
+           title: 'Pineapple'
+     
+        ),
+         ImageItemModel(
+          imageUrl: 'icons/pear.png',
+           title: 'Pear'
+     
+        ),
+         ImageItemModel(
+          imageUrl: 'icons/kiwi.png',
+           title: 'Kiwi'
+     
+        ),
+         ImageItemModel(
+          imageUrl: 'icons/olive.png',
+           title: 'Olive'
+     
+        ),
+         ImageItemModel(
+          imageUrl: 'icons/avocado.png',
+           title: 'Avocado'
      
         ),
 
@@ -79,9 +110,24 @@ class _TitleSState extends State<TitleS> {
                 //   size: 32.r,
                   
                 //   ),
-                child: Image(image: AssetImage(item.imageUrl),),
+                child: Image(
+                  image: AssetImage(
+                    item.imageUrl,
+                      ),
+                    ),
               ),
-              Text(item.title),
+              SizedBox(
+                height: 4,
+              ),
+              Text(
+                item.title,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14
+                ),
+                ),
             ],
           ),
         );
