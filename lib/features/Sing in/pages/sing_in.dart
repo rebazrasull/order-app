@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:my_app_name/config/cstuomerimage/assets.dart';
-import 'package:my_app_name/config/cstuomerimage/img_helper.dart';
 import 'package:my_app_name/shared/wighet/bottomnv/navigationb.dart';
 
 class SingIn extends StatefulWidget {
