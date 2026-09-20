@@ -64,12 +64,14 @@ class _ProductcardState extends State<Productcard> {
               // child:  getSvgImage(
               //   asset: item.imageUrl,
               // )
-              child: ClipRRect(
-                borderRadius: BorderRadiusGeometry.circular(12.0),
-                child: Image.network(
-                  item.imageUrl
-                  )
-                ),
+              child: Positioned.fill(
+                child: ClipRRect(
+                  borderRadius: BorderRadiusGeometry.circular(12.0),
+                  child: Image.network(
+                    item.imageUrl
+                    )
+                  ),
+              ),
                ),
               SizedBox(
                 height: 12.0,

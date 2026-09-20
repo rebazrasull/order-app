@@ -30,6 +30,12 @@ class _FeaturedState extends State<Featured> {
             ),
             child: Stack(
               children: [
+                ClipRRect(
+                  borderRadius: BorderRadiusGeometry.circular(12.0),
+                  child: Image.network(
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfSSy0Rq8K850svP9NMMaHFZNay9YewYL3-CNTsFu3Cw&s=10',
+                     )
+                    ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
