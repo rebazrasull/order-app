@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app_name/features/notifications/widget/all_notif.dart';
+import 'package:my_app_name/features/notifications/widget/offers.dart';
 import 'package:my_app_name/features/notifications/widget/order_updates.dart';
 
 class Notificationsscreen extends StatefulWidget {
@@ -57,7 +58,7 @@ class _NotificationsscreenState extends State<Notificationsscreen> {
           children: [
             AllNotif(),
             OrderUpdates(),
-            Center(child: Text('Special Offers')),
+            Offers(),
           ]
           )
       ),
