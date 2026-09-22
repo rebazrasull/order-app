@@ -40,7 +40,7 @@ class _GeneralSettingsState extends State<GeneralSettings> {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
       itemCount: _settings.length,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -94,20 +94,10 @@ class _GeneralSettingsState extends State<GeneralSettings> {
                         color: Colors.grey.shade600
                       ),
                       ),
-                       SizedBox(
-                height: 12.0,
-              ),
-              Divider(
-                color: Colors.grey[600],
-                      height: 12,
-              ),
-               SizedBox(
-                height: 12.0,
-              ),
                    
                   ],
-                ),
-              ),
+                 ),
+             ),
                
               Icon(
                 Icons.chevron_right,
@@ -117,7 +107,12 @@ class _GeneralSettingsState extends State<GeneralSettings> {
             ],
           ),
         );
-      },
+      }, 
+      separatorBuilder: (BuildContext context, int index) =>  
+              Divider(
+                color: Colors.grey[600],
+                      height: 32,
+              ), 
     );
   }
 }

@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+    class ShoopItemModel {
+   final IconData icon;
+    final String title;
+    final  String money;
+
+    const ShoopItemModel({
+      required this.icon,
+       required this.title,
+        required this.money
+          }
+       );
+    }
 class Shopping extends StatefulWidget {
   const Shopping({super.key});
+
 
   @override
   State<Shopping> createState() => _ShoppingState();
@@ -22,7 +37,7 @@ class _ShoppingState extends State<Shopping> {
              return  Container(
                 margin: EdgeInsets.only(bottom: 10),
                decoration: BoxDecoration(
-                  color:Colors.grey.shade300 ,
+                  color:Colors.grey.shade200 ,
              borderRadius: BorderRadius.circular(12.0),
                ),
                child: Padding(
@@ -36,13 +51,16 @@ class _ShoppingState extends State<Shopping> {
                    children: [
                   Row(
                   children: [
-                    Icon(
-                      Icons.fastfood
-                      ),
-                    // getSvgImage(
-                    //   asset:CustomIcons_image.FmaleImage,
-                    //   size: 12
+                    FaIcon(
+                      // ignore: deprecated_member_use
+                      FontAwesomeIcons.hamburger,
+                          size: 28.0,
+                          color: Colors.grey,
+                    ),
+                    // Icon(
+                    //   Icons.fastfood
                     //   ),
+                   
                       SizedBox(
                         width: 18.0,
                       ),
@@ -51,7 +69,7 @@ class _ShoppingState extends State<Shopping> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Tomato',
+                      'Hamberker',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(

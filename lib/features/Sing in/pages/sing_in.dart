@@ -20,40 +20,40 @@ class _SingInState extends State<SingIn> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              width: double.infinity,
+            Padding(
               padding: EdgeInsets.symmetric(
-                vertical:55.0,
-                ),
-           child: CircleAvatar(
-              radius: 132,
-             child: Image.network(
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWMw0iTImiyPWZVkqhLPNxAgI0MlMMNdvNRDPN6fJzg&s=10',
-              fit: BoxFit.cover,
-              loadingBuilder: (context, child, loadingProgress) {
-                if(loadingProgress == null) return child;
-                return Center(
-                  child: CircularProgressIndicator(
-                    value: loadingProgress.expectedTotalBytes != null
-                    ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
-                    :null
-                    ,
-                  ),
-                );
-              },
-              errorBuilder: (context, error, stackTrace) {
-                return Container(
-                  color: Colors.grey[200],
-                  child: Icon(
-                    Icons.broken_image,
-                    color: Colors.grey,
-                    size: 40,
-                    ),
-                );
-              },
-              
+                vertical: 42.0
               ),
-           ),
+              child: CircleAvatar(
+                 radius: 100,
+                 backgroundColor: Colors.white,
+                child: Image.network(
+                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEWMw0iTImiyPWZVkqhLPNxAgI0MlMMNdvNRDPN6fJzg&s=10',
+                 fit: BoxFit.cover,
+                 loadingBuilder: (context, child, loadingProgress) {
+                   if(loadingProgress == null) return child;
+                   return Center(
+                     child: CircularProgressIndicator(
+                       value: loadingProgress.expectedTotalBytes != null
+                       ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
+                       :null
+                       ,
+                     ),
+                   );
+                 },
+                 errorBuilder: (context, error, stackTrace) {
+                   return Container(
+                     color: Colors.grey[200],
+                     child: Icon(
+                       Icons.broken_image,
+                       color: Colors.grey,
+                       size: 40,
+                       ),
+                   );
+                 },
+                 
+                 ),
+              ),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,9 +64,12 @@ class _SingInState extends State<SingIn> {
                   'Create an account',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 18.0,
+                    fontSize: 22.0,
                     fontWeight: FontWeight.bold,
                   ),
+                ),
+                SizedBox(
+                  height: 6.0,
                 ),
                 Text(
                   maxLines: 2,
@@ -77,7 +80,7 @@ class _SingInState extends State<SingIn> {
               ],
             ),
             SizedBox(
-              height: 4,
+              height: 20,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -88,6 +91,35 @@ class _SingInState extends State<SingIn> {
                     decoration: InputDecoration(
                       hintText: 'email@domain.com',
                       labelText: 'email@domain.com',
+                      suffixIcon: Icon(
+                        Icons.edit_outlined,
+                        ),
+                      filled: true,
+                      fillColor: Colors.grey.shade200,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                        borderSide: BorderSide(color: Colors.red),
+                      ),
+                    ),
+                  ),
+                ),
+                 Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Password',
+                      labelText: 'Password',
+                      suffixIcon: Icon(
+                        Icons.password_outlined,
+                        ),
                       filled: true,
                       fillColor: Colors.grey.shade200,
                       border: OutlineInputBorder(

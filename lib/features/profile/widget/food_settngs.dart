@@ -60,7 +60,7 @@ class _FoodSettngsState extends State<FoodSettngs> {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
       itemCount: _settings.length,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -104,18 +104,22 @@ class _FoodSettngsState extends State<FoodSettngs> {
                         color: Colors.grey.shade600,
                       ),
                     ),
-                    SizedBox(height: 12),
-                    Divider(color: Colors.grey[600], height: 12),
-                    SizedBox(height: 12),
                   ],
                 ),
               ),
 
-              Icon(Icons.chevron_right, size: 24.0, color: Colors.grey),
+              Icon
+              (Icons.chevron_right,
+               size: 24.0,
+                color: Colors.grey
+                ),
             ],
           ),
         );
-      },
+      }, separatorBuilder: (BuildContext context, int index) =>  Divider(
+        color: Colors.grey[600],
+         height: 32
+         ),
     );
   }
 }

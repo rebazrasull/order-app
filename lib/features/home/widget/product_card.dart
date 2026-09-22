@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app_name/config/cstuomerimage/assets.dart';
-import 'package:my_app_name/config/cstuomerimage/img_helper.dart';
-
  class FoodsItemModel {
    final String imageUrl;
     final String title;
