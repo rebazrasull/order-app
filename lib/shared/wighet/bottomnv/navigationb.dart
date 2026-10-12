@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app_name/config/cstuomerimage/assets.dart';
-import 'package:my_app_name/config/cstuomerimage/img_helper.dart';
 import 'package:my_app_name/features/exploer/screens/explore_screen.dart';
 import 'package:my_app_name/features/home/pages/home_screens.dart';
 import 'package:my_app_name/features/notifications/pages/notificationsscreen.dart';
